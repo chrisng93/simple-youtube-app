@@ -1,0 +1,34 @@
+.video {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+
+  .video-player {
+    height: 300px;
+    width: 100%;
+    align-self: center;
+    justify-self: center;
+    flex: 1;
+
+    div {
+      height: 100%;
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+
+      iframe {
+        height: 100%;
+      }
+    }
+  }
+
+  .video-details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+  }
+}

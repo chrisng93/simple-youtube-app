@@ -1,0 +1,9 @@
+.search-results {
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  border-top: none;
+  flex: 2;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}

@@ -21,11 +21,13 @@ class HomePage extends React.PureComponent { // eslint-disable-line react/prefer
   render() {
     const { videos, selectedVideo, searchVideos, selectVideo } = this.props;
     return (
-      <h1>
+      <div className="home">
         <SearchBar searchVideos={searchVideos} />
-        <SearchResults videos={videos} selectVideo={selectVideo} />
-        <Video selectedVideo={selectedVideo} />
-      </h1>
+        <div className="content-wrapper">
+          <Video selectedVideo={selectedVideo} />
+          <SearchResults videos={videos} selectedVideo={selectedVideo} selectVideo={selectVideo} />
+        </div>
+      </div>
     );
   }
 }

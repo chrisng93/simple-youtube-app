@@ -11,12 +11,12 @@ export default function Video({ selectedVideo }) {
           <iframe className="embed-responsive-item" src={`http://www.youtube.com/embed/${selectedVideo.get('id').get('videoId')}`} allowFullScreen />
         </div>
       </div>
-      <div className="video-player-details">
-        <h3>
-          {}
-        </h3>
+      <div className="video-details">
+        <h1>
+          {selectedVideo.get('snippet').get('title')}
+        </h1>
         <div>
-          {}
+          {selectedVideo.get('snippet').get('description')}
         </div>
       </div>
     </div>

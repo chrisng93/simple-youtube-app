@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import SearchResult from '../SearchResult';
 
-export default class SearchResults extends Component {
-  render() {
-    const { videos, selectVideo } = this.props;
-    return (
-      <div>
-        {videos.map(video => <SearchResult key={video.get('etag')} video={video} selectVideo={selectVideo} />)}
-      </div>
-    );
-  }
+export default function SearchResults({ videos, selectedVideo, selectVideo }) {
+  return (
+    <div className={`search-results ${selectedVideo ? 'selected-video' : ''}`}>
+      {videos.map(video => <SearchResult key={video.get('etag')} video={video} selectVideo={selectVideo} />)}
+    </div>
+  );
 }
