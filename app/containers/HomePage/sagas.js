@@ -1,4 +1,4 @@
-import { take, call, put, select, cancel, takeLatest } from 'redux-saga/effects';
+import { take, call, put, cancel, takeLatest } from 'redux-saga/effects';
 import { LOCATION_CHANGE } from 'react-router-redux';
 import request from '../../utils/request';
 import { searchVideosSuccess, searchVideosFailure } from './actions';
@@ -12,7 +12,7 @@ export function* getVideos({ payload: { query } }) {
   try {
     const response = yield call(request, requestUrl);
     yield put(searchVideosSuccess({ videos: response.items }));
-  } catch(error) {
+  } catch (error) {
     yield put(searchVideosFailure({ message: error }));
   }
 }
@@ -26,4 +26,4 @@ export function* getVideosWatcher() {
 
 export default [
   getVideosWatcher,
-]
+];

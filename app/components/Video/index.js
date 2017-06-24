@@ -1,4 +1,8 @@
-import React, { Component } from "react";
+import React, { PropTypes as T } from 'react';
+
+const propTypes = {
+  selectedVideo: T.object,
+};
 
 export default function Video({ selectedVideo }) {
   if (selectedVideo && !selectedVideo.size) {
@@ -22,3 +26,5 @@ export default function Video({ selectedVideo }) {
     </div>
   );
 }
+
+Video.propTypes = propTypes;

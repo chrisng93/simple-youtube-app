@@ -1,4 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes as T } from 'react';
+
+const propTypes = {
+  searchVideos: T.func,
+};
 
 export default class SearchBar extends Component {
   constructor(props) {
@@ -25,3 +29,5 @@ export default class SearchBar extends Component {
     );
   }
 }
+
+SearchBar.propTypes = propTypes;

@@ -12,7 +12,7 @@ const initialState = fromJS({
 
 export default function homeReducer(state = initialState, action) {
   const { type, payload } = action;
-  switch(type) {
+  switch (type) {
     case SEARCH_VIDEOS:
       return state
         .set('isSearchingVideos', true);
@@ -28,7 +28,6 @@ export default function homeReducer(state = initialState, action) {
         .set('error', Map({ status: true, message: payload.message }));
 
     case SELECT_VIDEO:
-      console.log(payload)
       return state
         .set('selectedVideo', payload.video);
 

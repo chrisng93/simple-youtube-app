@@ -1,5 +1,11 @@
-import React, { Component } from 'react';
+import React, { PropTypes as T } from 'react';
 import SearchResult from '../SearchResult';
+
+const propTypes = {
+  videos: T.array,
+  selectedVideo: T.object,
+  selectVideo: T.func,
+};
 
 export default function SearchResults({ videos, selectedVideo, selectVideo }) {
   return (
@@ -8,3 +14,5 @@ export default function SearchResults({ videos, selectedVideo, selectVideo }) {
     </div>
   );
 }
+
+SearchResults.propTypes = propTypes;
