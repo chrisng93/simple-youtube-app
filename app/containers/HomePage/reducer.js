@@ -10,7 +10,7 @@ const initialState = fromJS({
   error: initialError,
 });
 
-export default function homeReducer(state = initialState, action) {
+export default function HomeReducer(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
     case SEARCH_VIDEOS:
@@ -29,7 +29,7 @@ export default function homeReducer(state = initialState, action) {
 
     case SELECT_VIDEO:
       return state
-        .set('selectedVideo', payload.video);
+        .set('selectedVideo', fromJS(payload.video));
 
     default:
       return state;

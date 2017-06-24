@@ -1,0 +1,11 @@
+exports[`HomeReducer returns the initial state 1`] = `
+Object {
+  "error": Object {
+    "message": "",
+    "status": false,
+  },
+  "isSearchingVideos": false,
+  "selectedVideo": Object {},
+  "videos": Array [],
+}
+`;
