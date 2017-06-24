@@ -7,7 +7,7 @@ const propTypes = {
 
 export default function SearchResult({ video, selectVideo }) {
   return (
-    <div className="search-result" onClick={() => selectVideo({ video })}> {/* eslint-disable-line jsx-a11y/no-static-element-interactions*/}
+    <div className="search-result" onClick={() => selectVideo({ video })}>
       <div className="search-result-image">
         <img src={video.get('snippet').get('thumbnails').get('medium').get('url')} role="presentation" />
       </div>
