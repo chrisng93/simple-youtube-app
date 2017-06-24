@@ -1,8 +1,13 @@
 import { createSelector } from 'reselect';
 
-const homeStateSelector = (state) => state.home;
+const homeStateSelector = (state) => state.get('home');
 
 export const videosSelector = createSelector(
   homeStateSelector,
-  homeState => homeState.videos
+  homeState => homeState.get('videos')
+);
+
+export const selectedVideoSelector = createSelector(
+  homeStateSelector,
+  homeState => homeState.get('selectedVideo')
 );

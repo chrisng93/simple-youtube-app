@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 
-export default class SearchResult extends Component {
-  render() {
-    return (
-      <div>
-        Search Result
-      </div>
-    );
-  }
+export default function SearchResult({ video, selectVideo }) {
+  return (
+    <div onClick={() => selectVideo({ video })}>
+      {video.get('etag')}
+    </div>
+  );
 }

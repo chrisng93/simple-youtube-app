@@ -11,33 +11,36 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { FormattedMessage } from 'react-intl';
-import messages from './messages';
-import { searchVideos } from './actions';
+import { searchVideos, selectVideo } from './actions';
+import { videosSelector, selectedVideoSelector } from './selectors';
 import SearchBar from '../../components/SearchBar';
 import SearchResults from '../../components/SearchResults';
 import Video from '../../components/Video';
 
 class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
-    const { searchVideos } = this.props;
+    const { videos, selectedVideo, searchVideos, selectVideo } = this.props;
     return (
       <h1>
         <SearchBar searchVideos={searchVideos} />
-        <SearchResults />
-        <Video />
+        <SearchResults videos={videos} selectVideo={selectVideo} />
+        <Video selectedVideo={selectedVideo} />
       </h1>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    videos: videosSelector(state),
+    selectedVideo: selectedVideoSelector(state),
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    searchVideos: (query) => dispatch(searchVideos(query)),
+    searchVideos: ({ query }) => dispatch(searchVideos({ query })),
+    selectVideo: ({ video }) => dispatch(selectVideo({ video })),
   };
 };
 

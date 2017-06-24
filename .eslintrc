@@ -1,0 +1,13 @@
+{
+  "parser": "babel-eslint",
+  "settings": {
+    "ecmascript": 7,
+    "jsx": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "arrow-parens": 0
+  }
+}

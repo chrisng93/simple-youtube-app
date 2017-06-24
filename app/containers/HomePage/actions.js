@@ -1,4 +1,4 @@
-import { SEARCH_VIDEOS, SEARCH_VIDEOS_SUCCESS, SEARCH_VIDEOS_FAILURE } from './constants';
+import { SEARCH_VIDEOS, SEARCH_VIDEOS_SUCCESS, SEARCH_VIDEOS_FAILURE, SELECT_VIDEO } from './constants';
 
 export const searchVideos = (payload) => {
   return {
@@ -17,6 +17,13 @@ export const searchVideosSuccess = (payload) => {
 export const searchVideosFailure = (payload) => {
   return {
     type: SEARCH_VIDEOS_FAILURE,
+    payload,
+  }
+};
+
+export const selectVideo = (payload) => {
+  return {
+    type: SELECT_VIDEO,
     payload,
   }
 };
